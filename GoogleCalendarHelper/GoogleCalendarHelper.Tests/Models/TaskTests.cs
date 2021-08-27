@@ -13,5 +13,23 @@ namespace GoogleCalendarHelper.Tests.Models
         {
             throw new NotImplementedException();
         }
+
+        [TestMethod]
+        public void MoveYesterdayTasks_ToNextDay_MovesOnlySpecifiedTasks()
+        {
+            throw new NotImplementedException();
+        }
+
+        [TestMethod]
+        public void MoveYesterdayTasks_ToNextDay_NoTasks_DoesNotCallService()
+        {
+            throw new NotImplementedException();
+        }
+
+        [TestMethod]
+        public void MoveYesterdayTasks_ToNextDay_ServerError_ThrowsServerErrorException()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
