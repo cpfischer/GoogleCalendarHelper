@@ -9,21 +9,21 @@ namespace GoogleCalendarHelper.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class GoogleCalendarHelperController : ControllerBase
+    public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<GoogleCalendarHelperController> _logger;
+        private readonly ILogger<WeatherForecastController> _logger;
 
-        public GoogleCalendarHelperController(ILogger<GoogleCalendarHelperController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
-        public GoogleCalendarHelperController()
+        public WeatherForecastController()
         {
         }
 

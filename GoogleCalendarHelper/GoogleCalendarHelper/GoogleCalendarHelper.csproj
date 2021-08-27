@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.54.0.2410" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.7" />
   </ItemGroup>
 
