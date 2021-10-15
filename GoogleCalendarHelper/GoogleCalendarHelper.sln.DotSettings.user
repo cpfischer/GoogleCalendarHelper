@@ -7,13 +7,32 @@
     &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3f2e2635_002Dce3f_002D4c7f_002Dac89_002D6079c0d9a86b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RemoveTask_ReturnsSuccess" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;TestAncestor&gt;&#xD;
+        &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.RemoveTask_ReturnsSuccess&lt;/TestId&gt;&#xD;
+        &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.MovePastDueTasksToToday_MovesTasks_DeletesOldOne&lt;/TestId&gt;&#xD;
+        &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.IsPastDue_DateGreaterThanToday_ReturnsFalse&lt;/TestId&gt;&#xD;
+      &lt;/TestAncestor&gt;&#xD;
+      &lt;Not&gt;&#xD;
+        &lt;TestAncestor&gt;&#xD;
+          &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.MovePastDueTasksToToday_MovesTasks_DeletesOldOne&lt;/TestId&gt;&#xD;
+        &lt;/TestAncestor&gt;&#xD;
+      &lt;/Not&gt;&#xD;
+    &lt;/And&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.MovePastDueTasksToToday_MovesTasks_DeletesOldOne&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=734bd002_002D56c6_002D4e0a_002Db390_002D8d269504e3a8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GoogleApiTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7aaacf53_002Da9af_002D4142_002Daf3c_002D831de8073f88/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetTaskList_200 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7aaacf53_002Da9af_002D4142_002Daf3c_002D831de8073f88/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetTaskList_200 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.GetTaskList_200&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

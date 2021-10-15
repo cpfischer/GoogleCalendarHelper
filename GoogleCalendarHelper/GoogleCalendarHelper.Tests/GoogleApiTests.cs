@@ -93,11 +93,9 @@ namespace GoogleCalendarHelper.Tests.Controllers
         [TestMethod]
         public void IsPastDue_DateGreaterThanToday_ReturnsFalse()
         {
-            var afterToday = DateTime.Today.AddDays(1);
-            afterToday = afterToday.ToUniversalTime();
             var afterTask = new Task
             {
-                Due = afterToday.ToLongDateString(),
+                Due = DateTime.UtcNow.AddDays(1).ToString("s") + "Z",
                 Title = "This is a test"
             };
 
@@ -120,12 +118,54 @@ namespace GoogleCalendarHelper.Tests.Controllers
             Assert.AreEqual(HttpStatusCode.OK, actual);
         }
 
-        //[TestMethod]
-        //public void MovePastDueTasksToToday_ReturnsSuccess()
-        //{
-        //    var actual = _tasksApi.MovePastDueTasks();
-        //    Assert.AreEqual(HttpStatusCode.OK, actual);
-        //}
+        [TestMethod]
+        public void MovePastDueTasksToToday_MovesTasks_DeletesOldOne()
+        {
+            var testDateTime = new DateTime(2020, 10, 01, 12, 12, 12);
+            testDateTime = testDateTime.ToUniversalTime();
+            var testTask = new Task
+            {
+                Due = testDateTime.ToString("s") + "Z",
+                Title = "This is a test"
+            };
+            var testTaskList = _tasksApi.GetTaskList(true);
+
+            _tasksApi.AddTask(testTask, testTaskList.Id);
+            var actual = _tasksApi.MovePastDueTasksToToday(true);
+            
+            var listOfTasks = _tasksApi.GetListOfTasks(testTaskList.Id);
+            foreach (Task task in listOfTasks)
+            {
+                Assert.IsFalse(_tasksApi.IsPastDue(task));
+            }
+            Assert.AreEqual(HttpStatusCode.OK, actual);
+        }
+
+        [TestMethod]
+        public void RemoveTask_ReturnsSuccess()
+        {
+            var testTitle = DateTime.UtcNow.ToString("s") + "Z";
+            var testTask = new Task
+            {
+                Due = DateTime.UtcNow.ToString("s") + "Z",
+                Title = testTitle
+            };
+
+            var testListId = _tasksApi.GetTaskList(true).Id;
+
+
+            _tasksApi.AddTask(testTask, testListId);
+            var testTaskId = _tasksApi.GetListOfTasks(testListId).First(x => x.Title == testTitle).Id;
+
+            var actual = _tasksApi.RemoveTask(testListId, testTaskId);
+
+            var listWithoutTask = _tasksApi.GetListOfTasks(testListId);
+            foreach (var task in listWithoutTask)
+            {
+                Assert.IsTrue(task.Title != testTitle);
+            }
+            Assert.AreEqual(HttpStatusCode.OK, actual);
+        }
 
         //    [TestMethod]
         //    public void AddNewTasks_IncorrectFormatting_ThrowsIncorrectFormatException()

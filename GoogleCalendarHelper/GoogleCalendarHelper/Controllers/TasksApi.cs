@@ -55,29 +55,57 @@ namespace GoogleCalendarHelper.Controllers
                 return new TaskList(); //ToDO: Make this properly
             }
             Console.Read();
+        }
 
+        public IList<Task> GetListOfTasks(string taskListId)
+        {
+            return _service.Tasks.List(taskListId).Execute().Items;
         }
 
 
         public bool IsPastDue(Task task)
         {
-            return DateTime.Parse(task.Due) < DateTime.UtcNow;
+            return DateTime.Parse(task.Due).DayOfYear < DateTime.UtcNow.DayOfYear;
         }
 
-
-        public HttpStatusCode MovePastDueTasksToToday()
+        public HttpStatusCode RemoveTask(string taskListId, string taskId)
         {
-            var taskList = GetTaskList();
-            var list_of_tasks = _service.Tasks.List(taskList.Id).Execute().Items;
-
-            foreach(Task task in list_of_tasks)
+            try
             {
-                if (IsPastDue(task))
+                _service.Tasks.Delete(taskListId, taskId).Execute();
+                return HttpStatusCode.OK;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return HttpStatusCode.InternalServerError;
+            }
+
+        }
+
+        public HttpStatusCode MovePastDueTasksToToday(bool isTest = false)
+        {
+            var taskList = GetTaskList(isTest);
+            var list_of_tasks = GetListOfTasks(taskList.Id);
+
+            try
+            {
+
+                foreach (Task task in list_of_tasks)
                 {
-                    task.Due = DateTime.Now.AddHours(6).ToLongDateString();
-                    //ToDo: Remove Task
-                    AddTask(task, taskList.Id);
+                    if (IsPastDue(task))
+                    {
+                        var updatedTask = task;
+                        updatedTask.Due = DateTime.UtcNow.AddHours(6).ToString("s") + "Z";
+                        RemoveTask(taskList.Id, task.Id);
+                        AddTask(updatedTask, taskList.Id);
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                Console.Write(ex);
+                return HttpStatusCode.InternalServerError;
             }
 
 
