@@ -1,0 +1,19 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=316af905_002Dea9e_002D4c7f_002D8cf1_002D63d6d4e365ce/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3e692d4f_002D5b96_002D4ad7_002Da6a3_002D2d857e313ca1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetTaskList_200" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=734bd002_002D56c6_002D4e0a_002Db390_002D8d269504e3a8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GoogleApiTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7aaacf53_002Da9af_002D4142_002Daf3c_002D831de8073f88/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetTaskList_200 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.GetTaskList_200&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

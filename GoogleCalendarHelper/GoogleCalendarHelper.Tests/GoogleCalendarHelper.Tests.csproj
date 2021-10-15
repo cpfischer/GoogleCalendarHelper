@@ -1,22 +1,30 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>GoogleCalendarHelper.Tests</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
+
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-    <PackageReference Include="System.Security.Permissions" Version="4.5.0" />
+    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.55.0.2410" />
+    <PackageReference Include="Google.Apis.Tasks.v1" Version="1.55.0.2384" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.7" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.7" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <Reference Include="Telerik.JustMock">
-      <HintPath>$(registry:HKEY_LOCAL_MACHINE\Software\Telerik\JustMock@BinaryPath)netcoreapp2.0\Telerik.JustMock.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\GoogleCalendarHelper\GoogleCalendarHelper.csproj" />
   </ItemGroup>
+	<ItemGroup>
+		<Reference Include="Telerik.JustMock">
+			<HintPath>$(registry:HKEY_LOCAL_MACHINE\Software\Telerik\JustMock@BinaryPath)netcoreapp2.0\Telerik.JustMock.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
 </Project>

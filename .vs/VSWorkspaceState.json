@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GoogleCalendarHelper",
+    "\\GoogleCalendarHelper\\GoogleCalendarHelper",
+    "\\GoogleCalendarHelper\\GoogleCalendarHelper.Tests",
+    "\\GoogleCalendarHelper\\GoogleCalendarHelper\\Controllers",
+    "\\GoogleCalendarHelper\\GoogleCalendarHelper\\Models"
   ],
+  "SelectedNode": "\\GoogleCalendarHelper\\GoogleCalendarHelper\\Controllers\\TasksApi.cs",
   "PreviewInSolutionExplorer": false
 }
