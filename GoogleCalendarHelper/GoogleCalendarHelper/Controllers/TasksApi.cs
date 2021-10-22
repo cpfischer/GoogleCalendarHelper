@@ -17,6 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Google.Apis.Http;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Task = Google.Apis.Tasks.v1.Data.Task;
 
@@ -41,7 +42,6 @@ namespace GoogleCalendarHelper.Controllers
             TasklistsResource.ListRequest listRequest = _service.Tasklists.List();
             listRequest.MaxResults = 10;
 
-
             // List task lists.
             IList<TaskList> taskLists = listRequest.Execute().Items;
             Console.WriteLine("Task Lists:");
@@ -54,7 +54,6 @@ namespace GoogleCalendarHelper.Controllers
                 Console.WriteLine("No task lists found.");
                 return new TaskList(); //ToDO: Make this properly
             }
-            Console.Read();
         }
 
         public IList<Task> GetListOfTasks(string taskListId)
@@ -128,40 +127,45 @@ namespace GoogleCalendarHelper.Controllers
 
         public TasksService SetupService()
         {
-            try
+            var credential = SetupCredential();
+            return new TasksService(new BaseClientService.Initializer()
             {
-                var credential = SetupCredential();
-                return new TasksService(new BaseClientService.Initializer()
-                {
-                    HttpClientInitializer = credential,
-                    ApplicationName = ApplicationName,
-                });
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Credentials error");
-            }
+                HttpClientInitializer = credential,
+                ApplicationName = ApplicationName,
+            });
         }
 
         public UserCredential SetupCredential()
         {
             UserCredential credential;
+            //try
+            //{
 
-            using (var stream =
-                new FileStream("C:/Code/GoogleCalendarHelper/GoogleCalendarHelper/credentials.json", FileMode.Open, FileAccess.Read))
-            {
-                // The file token.json stores the user's access and refresh tokens, and is created
-                // automatically when the authorization flow completes for the first time.
-                string credPath = "token.json";
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.Load(stream).Secrets,
-                    Scopes,
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore(credPath, true)).Result;
-            }
 
-            return credential;
+                using (var stream =
+                    new FileStream("C:/Code/GoogleCalendarHelper/GoogleCalendarHelper/credentials.json", FileMode.Open,
+                        FileAccess.Read))
+                {
+                    // The file token.json stores the user's access and refresh tokens, and is created
+                    // automatically when the authorization flow completes for the first time.
+                    string credPath = "token.json";
+                    credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                        GoogleClientSecrets.Load(stream).Secrets,
+                        Scopes,
+                        "user",
+                        CancellationToken.None,
+                        new FileDataStore(credPath, true)).Result;
+                }
+
+                return credential;
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Error setting up validation certificate");
+            //    //should make inherited UserCredential class with status variable
+            //    return new UserCredential();
+            //}
+
         }
     }
 }

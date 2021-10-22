@@ -23,6 +23,8 @@
     &lt;/And&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;
       &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.MovePastDueTasksToToday_MovesTasks_DeletesOldOne&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.AddNewTasks_CatchesException&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;MSTest::7FA0BD2F-DCC7-443D-AC1C-ADDF98EF5C2F::net5.0::GoogleCalendarHelper.Tests.Controllers.GoogleApiTests.SetupCredential_InvalidCredentialCert_CatchesException&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>

@@ -119,6 +119,36 @@ namespace GoogleCalendarHelper.Tests.Controllers
         }
 
         [TestMethod]
+        public void AddNewTasks_CatchesException()
+        {
+            var testTask = new Task
+            {
+                Due = DateTime.UtcNow.ToString("s") + "Z",
+                Title = "TestTask"
+            };
+
+            var testListId = _tasksApi.GetTaskList(true).Id;
+
+            var actual = Mock.Arrange(() => _tasksApi.AddTask(testTask, testListId)).Throws(new Exception());
+            Assert.AreEqual(HttpStatusCode.InternalServerError, actual);
+        }
+
+        //[TestMethod]
+        //public void SetupCredential_InvalidCredentialCert_CatchesException()
+        //{
+        //    var testTask = new Task
+        //    {
+        //        Due = DateTime.UtcNow.ToString("s") + "Z",
+        //        Title = "TestTask"
+        //    };
+
+        //    var actual = Mock.Arrange(() => _tasksApi.SetupCredential()).Throws(new Exception());
+            
+        //    Assert.AreEqual(HttpStatusCode.InternalServerError, actual);
+        //}
+
+
+        [TestMethod]
         public void MovePastDueTasksToToday_MovesTasks_DeletesOldOne()
         {
             var testDateTime = new DateTime(2020, 10, 01, 12, 12, 12);
